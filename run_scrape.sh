@@ -15,7 +15,7 @@ CONDA_BASE=/home/matusd/.conda
 ENV_NAME=mensa
 PYTHON_BIN="$CONDA_BASE/envs/$ENV_NAME/bin/python"
 PYTHON_SCRIPT="$WORKING_DIR/scrape.py"   
-OUT_ROOT="$WORKING_DIR/images"                  
+OUT_DIR="$WORKING_DIR/images"                  
 CSV_PREFIX="meals_raw"                          
 
 set -eu
@@ -52,7 +52,6 @@ echo "Task $TASK_ID scraping $STOP_DATE … $START_DATE"
 # ───────── run scraper ─────────
 source "$CONDA_BASE"/bin/activate "$ENV_NAME"
 
-OUT_DIR="$OUT_ROOT/task_${TASK_ID}"
 mkdir -p "$OUT_DIR"
 
 CSV_NAME="${CSV_PREFIX}_task_${TASK_ID}"
